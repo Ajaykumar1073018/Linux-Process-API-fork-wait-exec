@@ -52,6 +52,7 @@ image
 image
 ```
 ## C Program to create new process using Linux API system calls fork() and exit()
+```
 #include <stdio.h>
 #include<stdlib.h>
 int main()
@@ -69,9 +70,9 @@ exit(0);}
 ##OUTPUT
 
 image image
-
+```
 ## C Program to execute Linux system commands using Linux API system calls exec() family
-
+```
 #include <stdlib.h>
 #include <sys/wait.h>
 #include <sys/types.h>
@@ -95,6 +96,7 @@ int main()
         printf("Done.\n");
         exit(0);
 }
+```
 ##OUTPUT
 
 image
