@@ -1,8 +1,8 @@
-## Linux-Process-API-fork-wait-exec-
+# Linux-Process-API-fork-wait-exec-
 Ex02-Linux Process API-fork(), wait(), exec()
-
 # Ex02-OS-Linux-Process API - fork(), wait(), exec()
 Operating systems Lab exercise
+
 
 # AIM:
 To write C Program that uses Linux Process API - fork(), wait(), exec()
@@ -19,19 +19,22 @@ Write the C Program using Linux Process API - fork(), wait(), exec()
 
 ### Step 3:
 
-Test the C Program for the desired output.
+Test the C Program for the desired output. 
 
 # PROGRAM:
 
-## C Program to print process ID and parent Process ID using Linux API system calls
+Developed by : V.YOGESH
 
-```
+Register Number : 212223230250
+
+## C Program to print process ID and parent Process ID using Linux API system calls
+~~~
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
 int main(void)
-{	 //variable to store calling function's process id
-  pid_t process_id;
+{	//variable to store calling function's process id
+	pid_t process_id;
 	//variable to store parent function's process id
 	pid_t p_process_id;
 	//getpid() - will return process id of calling function
@@ -43,16 +46,16 @@ int main(void)
 //printing the process ids
 	printf("The process id: %d\n",process_id);
 	printf("The process id of parent function: %d\n",p_process_id);
-	return 0; 
-}
-##OUTPUT
+	return 0; }
+~~~
 
-image
+## OUTPUT
+![323363651-277a5ef9-b0c2-4e5b-ad59-4a415db2c31c](https://github.com/user-attachments/assets/33384d49-bf8b-4820-a747-0af2f8058d1c)
 
-image
-```
+
+
 ## C Program to create new process using Linux API system calls fork() and exit()
-```
+~~~
 #include <stdio.h>
 #include<stdlib.h>
 int main()
@@ -67,41 +70,30 @@ printf("I am parent, my pid is %d\n",getpid());
 sleep(100); 
 exit(0);} 
 }
-##OUTPUT
+~~~
 
-image image
-```
+## OUTPUT
+![323363997-88cf0f5e-c8fc-4341-b71a-c87c6979fdf1](https://github.com/user-attachments/assets/a4d2f0a7-a0e8-4dc1-b169-8461d4d1d6a6)
+
+
+
 ## C Program to execute Linux system commands using Linux API system calls exec() family
-```
+~~~
+#include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <sys/wait.h>
-#include <sys/types.h>
 int main()
-{       int status;
-        printf("Running ps with execlp\n");
-        execl("ps", "ps", "ax", NULL);
-        wait(&status);
-        if (WIFEXITED(status))
-                printf("child exited with status of %d\n", WEXITSTATUS(status));
-        else
-                puts("child did not exit successfully\n");
-        printf("Done.\n");
-        printf("Running ps with execlp. Now with path specified\n");
-        execl("/bin/ps", "ps", "ax", NULL);
-        wait(&status);
-        if (WIFEXITED(status))
-                printf("child exited with status of %d\n", WEXITSTATUS(status));
-        else
-                puts("child did not exit successfully\n");
-        printf("Done.\n");
-        exit(0);
+{
+	printf("Running ps with execlp\n");
+	execlp("ps", "ps", "ax", NULL);
+	printf("Done.\n");
+	exit(0);
 }
-```
-##OUTPUT
+~~~
 
-image
+## OUTPUT
+![323364224-1842c773-69d6-4a4d-9e90-fd5f92813952](https://github.com/user-attachments/assets/a21ceb66-2448-4e00-9c41-a86191084c4d)
 
-image
 
-## RESULT:
+# RESULT:
 The programs are executed successfully.
